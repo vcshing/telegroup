@@ -9,6 +9,7 @@ function ajaxGetQuestionDetail(array,callback) {
       data: {
           "page": array.page,
           "type": array.type,
+          "lang": lang,
           "id": array.id
       },
       dataType: "json",

@@ -15,7 +15,8 @@ function renderTopicList(array){
 }
 
 function redirectQuestionPage(index){
-    app.view.current.router.navigate("/question/?id="+ index)
+
+    app.view.current.router.navigate("/question/?id="+ index + "&lang="+lang);
 }
 
 
@@ -56,6 +57,6 @@ function selectLang(){
           }
         }
       }).open();
-  
+
 
 }
