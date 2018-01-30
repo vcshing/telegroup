@@ -1,0 +1,80 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">{{back}}</span>
+          </a>
+        </div>
+        <div class="title questionTitle"></div>
+      </div>
+    </div>
+    <div class="page-content">
+      <div class="card">
+
+      <div class="card-content card-content-padding">
+
+        <div class="question">
+
+        </div>
+
+
+
+
+      </div>
+      <div class="card-footer">
+    <!--    <a href="#" >Like</a>-->
+    <button  href="javascript;" class="button  button-fill color-blue joinGroup">{{join}}</button>
+
+</div>
+      <div class="card-footer">
+        <button onclick="app.router.back()" href="#" class="button button-fill color-gray" >{{back}}</button>
+      </div>
+</div>
+
+
+<br/><br/><br/><br/><br/>
+    </div>
+
+
+
+  </div>
+
+
+
+
+</template>
+<script>
+    return {
+        data: function() {
+          if (lang == "zh") {
+              return {
+                  "join":"加入群組",
+                  "back": "返回"
+
+              }
+          }else{
+            return {
+              "join":"Join Group",
+                "back": "Back",
+
+            }
+          }
+        },
+        on: {
+            // each object key means same name event handler
+            pageInit: function(page) {
+
+                userReadExamPageInit(page)
+                // do something on page init
+
+                //  debugger;
+            },
+            popupOpen: function(popup) {
+                // do something on popup open
+            },
+        },
+    }
+</script>

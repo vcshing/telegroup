@@ -1,0 +1,62 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back">
+            <i class="icon icon-back"></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">{{pageName}}</div>
+      </div>
+    </div>
+    <div class="page-content">
+
+  <div class="block">
+
+    {{content}}
+
+  </div>
+
+
+
+    </div>
+  </div>
+</template>
+<script>
+//http://d3pie.org/#
+  return {
+    data: function() {
+        //  debugger;
+        if (lang == "zh") {
+            return {
+                "pageName": "聲明",
+                "content": "<div class=\"block\">本應用程式有權修改或刪除用戶提交的內容!<br/>\
+                  本應用之起始資料來源自網絡收集<br/>\
+                  起始主要內容來自https://telegramgroup.com.hk/ <br/>\
+                  如需要刪除個別群組或有任何問題,<br/>\
+                  請聯絡vcshing2005@gmail.com<br/></div>\
+                "
+            }
+        }else{
+          return {
+              "pageName": "Disclaimer",
+              "content": "<div class=\"block\">The application has the right to modify or delete the user submitted content!<br/>\
+                The starting material for this application is collected from the web.<br/>\
+                If you need to delete individual groups or have any questions, Please contact vcshing2005@gmail.com<br/></div>\
+              "
+          }
+        }
+    },
+    on: {
+      // each object key means same name event handler
+      pageInit: function(page) {
+        userReadStatisticsInit(page)
+      },
+      popupOpen: function(popup) {
+        // do something on popup open
+      },
+    },
+  }
+</script>

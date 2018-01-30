@@ -1,0 +1,115 @@
+<template>
+  <div class="page">
+    <div class="navbar">
+      <div class="navbar-inner sliding">
+        <div class="left">
+          <a href="#" class="link back" data-reload-current="true">
+            <i class="icon icon-back" ></i>
+            <span class="ios-only">Back</span>
+          </a>
+        </div>
+        <div class="title">{{pageName}}</div>
+      </div>
+    </div>
+    <div class="page-content">
+      <form class="list" id="my-form">
+        <ul>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{type}}</div>
+                <div class="item-input-wrap submit-picker-type">
+                  <select name="type">
+                     <option value="">{{option}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{subject}}</div>
+                <div class="item-input-wrap">
+                  <input type="text" name="subject" class="subject" placeholder="Subject" >
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{intro}}</div>
+                <div class="item-input-wrap">
+                  <textarea name="intro" placeholder="Intro(please long hold to Edit)"></textarea>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="item-content item-input">
+              <div class="item-inner">
+                <div class="item-title item-label">{{link}}</div>
+                <div class="item-input-wrap">
+                  <input type="text" name="link" class="link" placeholder="link" >
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </form>
+      <div class="block block-strong row">
+        <div class="col"><a class="button-fill button color-blue submitForm" href="#">{{submit}}</a></div>
+
+    <!--    <div class="col"><a class="button fill-form-from-data" href="#">Fill Form</a></div>-->
+      </div>
+
+      <div class="block block-strong row">
+      <div class="col"><a class="button-fill button color-red deleteBtn" href="#">{{del}}</a></div>
+    <!--    <div class="col"><a class="button fill-form-from-data" href="#">Fill Form</a></div>-->
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+    return {
+        data: function() {
+            //  debugger;
+            if (lang == "zh") {
+                return {
+                    "pageName": "提交Telegram Group",
+                    "type": "種類",
+                    "subject": "名稱",
+                    "intro": "介紹",
+                    "link": "連結",
+                    "submit": "提交",
+                    "option":"請選擇",
+                    "del":"刪除群組"
+                }
+            }else{
+              return {
+                  "pageName": "Submit Telegram Group",
+                  "type": "Type",
+                  "subject": "Subject",
+                  "intro": "Introduction",
+                  "link": "Link",
+                  "submit": "Submit",
+                  "option":"Please Select",
+                  "del":"Del Group"
+              }
+            }
+        },
+        on: {
+            // each object key means same name event handler
+            pageInit: function(page) {
+                // do something on page init
+                userSubmitExamEditPageInit(page)
+            },
+            popupOpen: function(popup) {
+                // do something on popup open
+            },
+        },
+    }
+</script>
