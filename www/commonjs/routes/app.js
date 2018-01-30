@@ -12,6 +12,9 @@ var app = new Framework7({
     id: 'io.framework7.testapp',
     root: '#app',
     theme: theme,
+    touch:{
+       disableContextMenu : false
+     },
     view: {
     },
     data: function() {
