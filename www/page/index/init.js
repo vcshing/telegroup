@@ -1,7 +1,9 @@
 function init() {
     $.trumbowyg.svgPath = 'commonjs/library/editor/icons.svg';
     if(lang==""){
-      selectLang();
+      setTimeout(function(){
+          selectLang();
+      },1000)
     }
     bindMain();
     //alert(1);
