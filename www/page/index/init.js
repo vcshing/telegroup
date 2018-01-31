@@ -6,6 +6,7 @@ function init() {
       },1000)
     }
     bindMain();
+    bindInfinite()
     //alert(1);
     //app.view.current.router.navigate("/comments/?id="+1)
 
