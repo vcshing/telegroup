@@ -41,6 +41,9 @@ function edit_userSubmitExamPageAddBindEvent(page){
     }
     app.form.fillFromData('#my-form', formData);
   });
-
+  
+  $(".trumbowyg-editor").on("click", function() {
+    this.focus();
+  })
 
 }

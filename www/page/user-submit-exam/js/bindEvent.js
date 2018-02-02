@@ -31,6 +31,10 @@ function userSubmitExamPageAddBindEvent(){
     app.form.fillFromData('#my-form', formData);
   });
 
+  $(".trumbowyg-editor").on("click", function() {
+    this.focus();
+  })
+  
   $(".choiceNum").on('change', function(){
 
     var choiceAnsArr =[]
