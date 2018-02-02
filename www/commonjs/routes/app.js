@@ -12,6 +12,9 @@ var app = new Framework7({
     id: 'io.framework7.testapp',
     root: '#app',
     theme: theme,
+    navbar: {
+      hideOnPageScroll: true
+    },
     touch:{
        disableContextMenu : false
      },
@@ -98,14 +101,14 @@ $$(document).on('deviceready', function() {
         console.log("prepareRewardVideoAdFail" + JSON.stringify(e));
     });
 
-    if (AdMob) AdMob.prepareInterstitial({
-        adId: admobid.interstitial,
-        autoShow: false,
-        isTesting: appConfigArr["isTesting"]
-    });
+
     // Request interstitial (will present automatically when autoShowInterstitial is set to true)
-    randomEvent(50, function() {
-        AdMob.showInterstitial();
+    randomEvent(25, function() {
+      if (AdMob) AdMob.prepareInterstitial({
+          adId: admobid.interstitial,
+          autoShow: true,
+          isTesting: appConfigArr["isTesting"]
+      });
     });
 
 

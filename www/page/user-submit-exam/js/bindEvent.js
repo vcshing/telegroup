@@ -32,6 +32,7 @@ function userSubmitExamPageAddBindEvent(){
   });
 
   $(".choiceNum").on('change', function(){
+
     var choiceAnsArr =[]
     var choiceResultArr =[]
     for(var i = 0; i < 10; i++) {
